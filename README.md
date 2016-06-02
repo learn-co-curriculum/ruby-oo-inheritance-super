@@ -21,7 +21,7 @@ class User
 end
 ```
 
-However, when a student logs into our app, we need to not only set their logged in attribute to `true`, we need to set their "in class" attribute to true. We could simply edit the `#log_in` method in the `User` class to account for this. But that doesn't make sense here. Remember that both `Student` and `Teacher` inherit from `User`. Teachers don't need to indicate that they are "in class", so we don't want to alter the `#log_in` method of our parent class and inadvertantly give teachers some behavior that they don't want or need. 
+However, when a student logs into our app, we need to not only set their logged in attribute to `true`, we need to set their "in class" attribute to true. We could simply edit the `#log_in` method in the `User` class to account for this. But that doesn't make sense here. Remember that both `Student` and `Teacher` inherit from `User`. Teachers don't need to indicate that they are "in class", so we don't want to alter the `#log_in` method of our parent class and inadvertently give teachers some behavior that they don't want or need. 
 
 Instead, we can augment, or supercharge, the `#log_in` method *inside* of the `Student` class. 
 
@@ -40,3 +40,5 @@ Here, we re-define the `#log_in` method and tell it to inherit any functionality
 
 In the `#log_in` method above, the `super` keyword will call on the `#log_in` method as defined in the super class. *Then*, the additional code that we're adding into our `Student#log_in` method will also run. We have therefore supercharged our `#log_in` method, for the `Student` class only. 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-super-inheritance-' title='Ruby Inheritance: Using the super Keyword'>Ruby Inheritance: Using the super Keyword</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/ruby-super-inheritance-'>Super</a> on Learn.co and start learning to code for free.</p>
