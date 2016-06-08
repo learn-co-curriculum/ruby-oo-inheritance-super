@@ -2,15 +2,15 @@
 
 ## Introduction
 
-So far, we've seen the benefits of using inheritance to create a group of classes that share certain characters and behaviors. However, up until now, the implementation of shared characteristic has been somewhat rigid. If class `Student` inherits from class `User`, we can choose to either allow the `Student` class to inherit a certain method from `User` or overwrite that method with another implementation that is specific to `Student`. 
+So far, we've seen the benefits of using inheritance to create a group of classes that share certain characteristics and behaviors. However, up until now, the implementation of shared characteristics has been somewhat rigid. If class `Student` inherits from class `User`, we can choose to either allow the `Student` class to inherit a certain method from `User` or overwrite that method with another implementation that is specific to `Student`. 
 
 But what if there is a method in the parent class that we want our child to share *some* of the functionality of? Or what if we want our child class to inherit a method from the parent and then augment it in some way? We can achieve this with the use of the `super` keyword. 
 
 ## Using `super` to supercharge inheritance
 
-Let's say we are working on an education app in which users are either students or teachers. We have a parent, `User` class that both our `Student` and `Teacher` classes inherit from. 
+Let's say we are working on an education app in which users are either students or teachers. We have a parent, `User` class, that both our `Student` and `Teacher` classes inherit from. 
 
-Our `User` class has a method `log_in`, that sets an instance variable, `@logged_in` equal to `true`. 
+Our `User` class has a method, `log_in`, that sets an instance variable, `@logged_in` equal to `true`. 
 
 ```ruby
 class User
@@ -21,7 +21,7 @@ class User
 end
 ```
 
-However, when a student logs into our app, we need to not only set their logged in attribute to `true`, we need to set their "in class" attribute to true. We could simply edit the `#log_in` method in the `User` class to account for this. But that doesn't make sense here. Remember that both `Student` and `Teacher` inherit from `User`. Teachers don't need to indicate that they are "in class", so we don't want to alter the `#log_in` method of our parent class and inadvertently give teachers some behavior that they don't want or need. 
+However, when a student logs into our app, we need to not only set their logged in attribute to `true`, we need to set their "in class" attribute to true. We could simply edit the `#log_in` method in the `User` class to account for this. But that doesn't make sense here. Remember that both `Student` and `Teacher` inherit from `User`. Teachers don't need to indicate that they are "in class", so we don't want to alter the `#log_in` method of our parent class and inadvertantly give teachers some behavior that they don't want or need. 
 
 Instead, we can augment, or supercharge, the `#log_in` method *inside* of the `Student` class. 
 
