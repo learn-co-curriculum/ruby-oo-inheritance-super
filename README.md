@@ -39,6 +39,3 @@ end
 Here, we re-define the `#log_in` method and tell it to inherit any functionality of the `#log_in` method defined in the parent, or "super", class, which is `User`. 
 
 In the `#log_in` method above, the `super` keyword will call on the `#log_in` method as defined in the super class. *Then*, the additional code that we're adding into our `Student#log_in` method will also run. We have therefore supercharged our `#log_in` method, for the `Student` class only. 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-super-inheritance-' title='Ruby Inheritance: Using the super Keyword'>Ruby Inheritance: Using the super Keyword</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/ruby-super-inheritance-'>Super</a> on Learn.co and start learning to code for free.</p>
