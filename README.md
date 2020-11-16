@@ -1,4 +1,4 @@
-# Ruby Inheritance: Using the `super` Keyword
+# Super
 
 ## Introduction
 
